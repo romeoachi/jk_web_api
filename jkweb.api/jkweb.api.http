@@ -1,0 +1,6 @@
+@jkweb.api_HostAddress = http://localhost:5216
+
+GET {{jkweb.api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
