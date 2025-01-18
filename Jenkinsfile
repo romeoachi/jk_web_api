@@ -45,7 +45,7 @@ pipeline {
                     
                     $credentials = New-Object System.Management.Automation.PSCredential($env:CREDENTIAL_USERNAME,(ConvertTo-SecureString $env:CREDENTIAL_PASSWORD  -AsPlainText -Force))
                     
-                    New-PSDrive -Name X -PSProvider FileSystem -Root "\\\INEXA-DEV-PC57\\jk_webapi" -Persist -Credential $credentials
+                    New-PSDrive -Name X -PSProvider FileSystem -Root "\\\\INEXA-DEV-PC57\\jk_webapi" -Persist -Credential $credentials
 
                     Copy-Item -Path 'publish\\*' -Destination 'X:\' -Force
 
