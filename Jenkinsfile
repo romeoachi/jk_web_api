@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script {
                     bat "dotnet restore"
-                    bat "dotnet build --configuration Release"
+                    bat "dotnet build --configuration Release /p:Environment=Development"
                 }
             }
         }
@@ -24,7 +24,7 @@ pipeline {
         stage('Test'){
             steps {
                 script {
-                    bat "dotnet test --no-restore --configuration Release"
+                    bat "dotnet test --no-restore --configuration Release /p:Environment=Development"
                 }
             }
         }
@@ -32,7 +32,7 @@ pipeline {
         stage('Publish'){
             steps {
                 script {
-                    bat "dotnet publish --no-restore --configuration Release --output .\\publish"
+                    bat "dotnet publish --no-restore --configuration Release /p:Environment=Development --output .\\publish"
                 }
             }
         }
