@@ -40,7 +40,7 @@ pipeline {
          stage('Deploy'){
             steps {
                 script {
-                   withCredentials([usernamePassword(withCredentialsId:'localuser', passwordVariable:'CREDENTIAL_PASSWORD', usernameVariable:'CREDENTIAL_USERMANE')]){
+                   withCredentials([usernamePassword(withCredentialsId:'coreuser', passwordVariable:'CREDENTIAL_PASSWORD', usernameVariable:'CREDENTIAL_USERMANE')]){
                     powershell '''
                     
                     $credentials = New-Object System.Management.Automation.PSCredential($env:CREDENTIAL_USERNAME,(ConvertTo-SecureString $env:CREDENTIAL_PASSWORD  -AsPlainText -Force))
