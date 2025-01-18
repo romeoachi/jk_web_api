@@ -40,7 +40,7 @@ pipeline {
          stage('Deploy'){
             steps {
                 script {
-                   withCredentials([usernamePassword(credentialsId:'coreuser', passwordVariable:'CREDENTIAL_PASSWORD', usernameVariable:'CREDENTIAL_USERMANE')]){
+                   withCredentials([usernamePassword(credentialsId:'coreuser', passwordVariable:'CREDENTIAL_PASSWORD', usernameVariable:'CREDENTIAL_USERNAME')]){
                     powershell '''
                     
                     $password = ConvertTo-SecureString $env:CREDENTIAL_PASSWORD -AsPlainText -Force
